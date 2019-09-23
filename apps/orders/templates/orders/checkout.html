@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Checkout</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <a href="/">Back</a>
+            <br>
+        </div>
+        <div class="row">
+            <h1>Checkout</h1>
+        </div>
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        <div class="row mt-3">
+            <div class="col-sm-6">
+                <form action="/process_checkout" method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="first_name" id="first_name"
+                            placeholder="first name">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="last_name" id="last_name" placeholder="last name">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="email" id="email" placeholder="email">
+                        <small id="emailConf" class="form-text text-muted">An email will be sent to you after you
+                            submit
+                            your order.</small>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="cc" id="cc" placeholder="credit card number">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="exp_month" id="exp_month"
+                            placeholder="expiry month">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="exp_year" id="exp_year" placeholder="expiry year">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="sec_code" id="sec_code" placeholder="security code">
+                    </div>
+            </div>
+
+            <div class="col-sm-6">
+                <div class="form-group">
+                    <input type="text" class="form-control" name="movie" id="movie" value="{{movie_selection_title}}">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="date" id="date" value="{{date}}">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="time" id="time" value="{{movie_selection_time}}">
+                </div>
+                <div class="form-group">
+                    <input type="text" class="form-control" name="num_tix" id="num_tix" value="{{movie_selection_tix}}">
+                </div>
+                <br>
+                <h4>Order total: ${{total_sales}}   </h4>
+                <div class="form-group">
+                    <input type="hidden" class="form-control" name="total" id="total" value="{{total_sales}}">
+                </div>
+                <br>
+                <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

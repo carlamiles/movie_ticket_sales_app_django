@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Home</title>
+</head>
+
+<body>
+    <div class="container">
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li{% if message.tags %} class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+                {% endfor %}
+        </ul>
+        {% endif %}
+        <h1>Studio Movie Grill</h1>
+        <br>
+        <div class="row">
+            <div class="col">
+                <div class="card" style="width: 12rem;">
+                    <img src="https://images.fandango.com/ImageRenderer/200/0/redesign/static/img/default_poster.png/0/images/masterrepository/Fandango/219166/AdAstra_VerC_Poster_R2_sRGB.JPG"
+                        class="card-img-top" alt="Ad Astra movie poster">
+                    <div class="card-body">
+                        <h5 class="card-title">Ad Astra</h5>
+                        <p class="card-text">PG-13, 2 hr 2 min
+                            Action/Adventure, Sci-Fi/Fantasy, Suspense/Thriller</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><a href="#" class="card-link">
+                                <form action="/select_movie" method="post">
+                                    {% csrf_token %}
+                                    <input type="hidden" class="form-control" name="movie_selection_title"
+                                        id="movie_selection_title" value="Ad Astra">
+                                    <input type="hidden" class="form-control" name="movie_selection_time"
+                                        id="movie_selection_time" value="7:10PM">
+                                    <input type="text" class="form-control" name="movie_selection_tix"
+                                        id="movie_selection_tix" placeholder="# of tickets">
+                                    <button type="submit" class="btn btn-primary">7:10PM</button>
+                                </form>
+                            </a></li>
+                        <li class="list-group-item"><a href="#" class="card-link">
+                                <form action="/select_movie" method="post">
+                                    {% csrf_token %}
+                                    <input type="hidden" class="form-control" name="movie_selection_title"
+                                        id="movie_selection_title" value="Ad Astra">
+                                    <input type="hidden" class="form-control" name="movie_selection_time"
+                                        id="movie_selection_time" value="10:00PM">
+                                    <input type="text" class="form-control" name="movie_selection_tix"
+                                        id="movie_selection_tix" placeholder="# of tickets">
+                                    <button type="submit" class="btn btn-primary">10:00PM</button>
+                                </form>
+                            </a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="col">
+                <div class="card" style="width: 12rem;">
+                    <img src="https://images.fandango.com/ImageRenderer/200/0/redesign/static/img/default_poster.png/0/images/MasterRepository/fandango/219052/RamboLB_FB-711x1080_BBAlt_R1_JA_W01.jpg"
+                        class="card-img-top" alt="Rambo movie poster">
+                    <div class="card-body">
+                        <h5 class="card-title">Rambo: Last Blood</h5>
+                        <p class="card-text">R, 1 hr 41 min
+                            Action/Adventure</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><a href="#" class="card-link">
+                                <form action="/select_movie" method="post">
+                                    {% csrf_token %}
+                                    <input type="hidden" class="form-control" name="movie_selection_title"
+                                        id="movie_selection_title" value="Rambo: Last Blood">
+                                    <input type="hidden" class="form-control" name="movie_selection_time"
+                                        id="movie_selection_time" value="7:00PM">
+                                    <input type="text" class="form-control" name="movie_selection_tix"
+                                        id="movie_selection_tix" placeholder="# of tickets">
+                                    <button type="submit" class="btn btn-primary">7:00PM</button>
+                                </form>
+                            </a></li>
+                        <li class="list-group-item"><a href="#" class="card-link">
+                                <form action="/select_movie" method="post">
+                                    {% csrf_token %}
+                                    <input type="hidden" class="form-control" name="movie_selection_title"
+                                        id="movie_selection_title" value="Rambo: Last Blood">
+                                    <input type="hidden" class="form-control" name="movie_selection_time"
+                                        id="movie_selection_time" value="10:00PM">
+                                    <input type="text" class="form-control" name="movie_selection_tix"
+                                        id="movie_selection_tix" placeholder="# of tickets">
+                                    <button type="submit" class="btn btn-primary">10:00PM</button>
+                                </form>
+                            </a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 12rem;">
+                    <img src="https://images.fandango.com/ImageRenderer/200/0/redesign/static/img/default_poster.png/0/images/MasterRepository/fandango/219906/CanYouKeepASecret2019.jpg"
+                        class="card-img-top" alt="Can you keep a secret? movie poster">
+                    <div class="card-body">
+                        <h5 class="card-title">Can You Keep a Secret?</h5>
+                        <p class="card-text">1 hr 34 min
+                            Comedy, Romance</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><a href="#" class="card-link">
+                                <form action="/select_movie" method="post">
+                                    {% csrf_token %}
+                                    <input type="hidden" class="form-control" name="movie_selection_title"
+                                        id="movie_selection_title" value="Can You Keep a Secret?">
+                                    <input type="hidden" class="form-control" name="movie_selection_time"
+                                        id="movie_selection_time" value="10:00AM">
+                                    <input type="text" class="form-control" name="movie_selection_tix"
+                                        id="movie_selection_tix" placeholder="# of tickets">
+                                    <button type="submit" class="btn btn-primary">10:00AM</button>
+                                </form>
+                            </a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 12rem;">
+                    <img src="https://images.fandango.com/ImageRenderer/200/0/redesign/static/img/default_poster.png/0/images/MasterRepository/fandango/218764/HUSTLERS_27x40_sRGB.jpg"
+                        class="card-img-top" alt="Hustlers movie poster">
+                    <div class="card-body">
+                        <h5 class="card-title">Hustlers</h5>
+                        <p class="card-text">R, 1 hr 50 min
+                            Comedy, Drama, Suspense/Thriller</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><a href="#" class="card-link">
+                                <form action="/select_movie" method="post">
+                                    {% csrf_token %}
+                                    <input type="hidden" class="form-control" name="movie_selection_title"
+                                        id="movie_selection_title" value="Hustlers">
+                                    <input type="hidden" class="form-control" name="movie_selection_time"
+                                        id="movie_selection_time" value="7:00PM">
+                                    <input type="text" class="form-control" name="movie_selection_tix"
+                                        id="movie_selection_tix" placeholder="# of tickets">
+                                    <button type="submit" class="btn btn-primary">7:00PM</button>
+                                </form>
+                            </a></li>
+                        <li class="list-group-item"><a href="#" class="card-link">
+                                <form action="/select_movie" method="post">
+                                    {% csrf_token %}
+                                    <input type="hidden" class="form-control" name="movie_selection_title"
+                                        id="movie_selection_title" value="Hustlers">
+                                    <input type="hidden" class="form-control" name="movie_selection_time"
+                                        id="movie_selection_time" value="7:25PM">
+                                    <input type="text" class="form-control" name="movie_selection_tix"
+                                        id="movie_selection_tix" placeholder="# of tickets">
+                                    <button type="submit" class="btn btn-primary">7:25PM</button>
+                                </form>
+                            </a></li>
+                        <li class="list-group-item"><a href="#" class="card-link">
+                                <form action="/select_movie" method="post">
+                                    {% csrf_token %}
+                                    <input type="hidden" class="form-control" name="movie_selection_title"
+                                        id="movie_selection_title" value="Hustlers">
+                                    <input type="hidden" class="form-control" name="movie_selection_time"
+                                        id="movie_selection_time" value="8:30PM">
+                                    <input type="text" class="form-control" name="movie_selection_tix"
+                                        id="movie_selection_tix" placeholder="# of tickets">
+                                    <button type="submit" class="btn btn-primary">8:30PM</button>
+                                </form>
+                            </a></li>
+                        <li class="list-group-item"><a href="#" class="card-link">
+                                <form action="/select_movie" method="post">
+                                    {% csrf_token %}
+                                    <input type="hidden" class="form-control" name="movie_selection_title"
+                                        id="movie_selection_title" value="Hustlers">
+                                    <input type="hidden" class="form-control" name="movie_selection_time"
+                                        id="movie_selection_time" value="9:45PM">
+                                    <input type="text" class="form-control" name="movie_selection_tix"
+                                        id="movie_selection_tix" placeholder="# of tickets">
+                                    <button type="submit" class="btn btn-primary">9:45PM</button>
+                                </form>
+                            </a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col">
+                <div class="card" style="width: 12rem;">
+                    <img src="https://images.fandango.com/ImageRenderer/200/0/redesign/static/img/default_poster.png/0/images/MasterRepository/fandango/216994/itchapter2%20-%20Final%20Art.jpg"
+                        class="card-img-top" alt="It Chapter Two movie poster">
+                    <div class="card-body">
+                        <h5 class="card-title">It: Chapter Two</h5>
+                        <p class="card-text">R, 2 hr 49 min
+                            Horror, Suspense/Thriller</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><a href="#" class="card-link">
+                                <form action="/select_movie" method="post">
+                                    {% csrf_token %}
+                                    <input type="hidden" class="form-control" name="movie_selection_title"
+                                        id="movie_selection_title" value="It: Chapter Two">
+                                    <input type="hidden" class="form-control" name="movie_selection_time"
+                                        id="movie_selection_time" value="10:00AM">
+                                    <input type="text" class="form-control" name="movie_selection_tix"
+                                        id="movie_selection_tix" placeholder="# of tickets">
+                                    <button type="submit" class="btn btn-primary">10:00AM</button>
+                                </form>
+                            </a></li>
+                        <li class="list-group-item"><a href="#" class="card-link">
+                                <form action="/select_movie" method="post">
+                                    {% csrf_token %}
+                                    <input type="hidden" class="form-control" name="movie_selection_title"
+                                        id="movie_selection_title" value="It: Chapter Two">
+                                    <input type="hidden" class="form-control" name="movie_selection_time"
+                                        id="movie_selection_time" value="12:00PM">
+                                    <input type="text" class="form-control" name="movie_selection_tix"
+                                        id="movie_selection_tix" placeholder="# of tickets">
+                                    <button type="submit" class="btn btn-primary">12:00PM</button>
+                                </form>
+                            </a></li>
+                        <li class="list-group-item"><a href="#" class="card-link">
+                                <form action="/select_movie" method="post">
+                                    {% csrf_token %}
+                                    <input type="hidden" class="form-control" name="movie_selection_title"
+                                        id="movie_selection_title" value="It: Chapter Two">
+                                    <input type="hidden" class="form-control" name="movie_selection_time"
+                                        id="movie_selection_time" value="5:30PM">
+                                    <input type="text" class="form-control" name="movie_selection_tix"
+                                        id="movie_selection_tix" placeholder="# of tickets">
+                                    <button type="submit" class="btn btn-primary">5:30PM</button>
+                                </form>
+                            </a></li>
+                        <li class="list-group-item"><a href="#" class="card-link">
+                                <form action="/select_movie" method="post">
+                                    {% csrf_token %}
+                                    <input type="hidden" class="form-control" name="movie_selection_title"
+                                        id="movie_selection_title" value="It: Chapter Two">
+                                    <input type="hidden" class="form-control" name="movie_selection_time"
+                                        id="movie_selection_time" value="6:30PM">
+                                    <input type="text" class="form-control" name="movie_selection_tix"
+                                        id="movie_selection_tix" placeholder="# of tickets">
+                                    <button type="submit" class="btn btn-primary">6:30PM</button>
+                                </form>
+                            </a></li>
+                        <li class="list-group-item"><a href="#" class="card-link">
+                                <form action="/select_movie" method="post">
+                                    {% csrf_token %}
+                                    <input type="hidden" class="form-control" name="movie_selection_title"
+                                        id="movie_selection_title" value="It: Chapter Two">
+                                    <input type="hidden" class="form-control" name="movie_selection_time"
+                                        id="movie_selection_time" value="9:00PM">
+                                    <input type="text" class="form-control" name="movie_selection_tix"
+                                        id="movie_selection_tix" placeholder="# of tickets">
+                                    <button type="submit" class="btn btn-primary">9:00PM</button>
+                                </form>
+                            </a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 12rem;">
+                    <img src="https://images.fandango.com/ImageRenderer/200/0/redesign/static/img/default_poster.png/0/images/MasterRepository/fandango/219573/DontLetGo2019.jpg"
+                        class="card-img-top" alt="Don't Let Go movie poster">
+                    <div class="card-body">
+                        <h5 class="card-title">Don't Let Go</h5>
+                        <p class="card-text">R, 1 hr 43 min
+                            Horror, Sci-Fi/Fantasy, Suspense/Thriller</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><a href="#" class="card-link">
+                                <form action="/select_movie" method="post">
+                                    {% csrf_token %}
+                                    <input type="hidden" class="form-control" name="movie_selection_title"
+                                        id="movie_selection_title" value="Don't Let Go">
+                                    <input type="hidden" class="form-control" name="movie_selection_time"
+                                        id="movie_selection_time" value="10:50AM">
+                                    <input type="text" class="form-control" name="movie_selection_tix"
+                                        id="movie_selection_tix" placeholder="# of tickets">
+                                    <button type="submit" class="btn btn-primary">10:50AM</button>
+                                </form>
+                            </a></li>
+                        <li class="list-group-item"><a href="#" class="card-link">
+                                <form action="/select_movie" method="post">
+                                    {% csrf_token %}
+                                    <input type="hidden" class="form-control" name="movie_selection_title"
+                                        id="movie_selection_title" value="Don't Let Go">
+                                    <input type="hidden" class="form-control" name="movie_selection_time"
+                                        id="movie_selection_time" value="1:50PM">
+                                    <input type="text" class="form-control" name="movie_selection_tix"
+                                        id="movie_selection_tix" placeholder="# of tickets">
+                                    <button type="submit" class="btn btn-primary">1:50PM</button>
+                                </form>
+                            </a></li>
+                        <li class="list-group-item"><a href="#" class="card-link">
+                                <form action="/select_movie" method="post">
+                                    {% csrf_token %}
+                                    <input type="hidden" class="form-control" name="movie_selection_title"
+                                        id="movie_selection_title" value="Don't Let Go">
+                                    <input type="hidden" class="form-control" name="movie_selection_time"
+                                        id="movie_selection_time" value="4:45PM">
+                                    <input type="text" class="form-control" name="movie_selection_tix"
+                                        id="movie_selection_tix" placeholder="# of tickets">
+                                    <button type="submit" class="btn btn-primary">4:45PM</button>
+                                </form>
+                            </a></li>
+                        <li class="list-group-item"><a href="#" class="card-link">
+                                <form action="/select_movie" method="post">
+                                    {% csrf_token %}
+                                    <input type="hidden" class="form-control" name="movie_selection_title"
+                                        id="movie_selection_title" value="Don't Let Go">
+                                    <input type="hidden" class="form-control" name="movie_selection_time"
+                                        id="movie_selection_time" value="7:15PM">
+                                    <input type="text" class="form-control" name="movie_selection_tix"
+                                        id="movie_selection_tix" placeholder="# of tickets">
+                                    <button type="submit" class="btn btn-primary">7:15PM</button>
+                                </form>
+                            </a></li>
+                        <li class="list-group-item"><a href="#" class="card-link">
+                                <form action="/select_movie" method="post">
+                                    {% csrf_token %}
+                                    <input type="hidden" class="form-control" name="movie_selection_title"
+                                        id="movie_selection_title" value="Don't Let Go">
+                                    <input type="hidden" class="form-control" name="movie_selection_time"
+                                        id="movie_selection_time" value="9:50PM">
+                                    <input type="text" class="form-control" name="movie_selection_tix"
+                                        id="movie_selection_tix" placeholder="# of tickets">
+                                    <button type="submit" class="btn btn-primary">9:50PM</button>
+                                </form>
+                            </a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 12rem;">
+                    <img src="https://images.fandango.com/ImageRenderer/200/0/redesign/static/img/default_poster.png/0/images/MasterRepository/fandango/218538/angelhasfallen-OnlinePayoff_1944x2880.jpg"
+                        class="card-img-top" alt="Angel Has Fallen movie poster">
+                    <div class="card-body">
+                        <h5 class="card-title">Angel Has Fallen</h5>
+                        <p class="card-text">R, 1 hr 54 min
+                            Action/Adventure, Suspense/Thriller</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><a href="#" class="card-link">
+                                <form action="/select_movie" method="post">
+                                    {% csrf_token %}
+                                    <input type="hidden" class="form-control" name="movie_selection_title"
+                                        id="movie_selection_title" value="Angel Has Fallen">
+                                    <input type="hidden" class="form-control" name="movie_selection_time"
+                                        id="movie_selection_time" value="1:00PM">
+                                    <input type="text" class="form-control" name="movie_selection_tix"
+                                        id="movie_selection_tix" placeholder="# of tickets">
+                                    <button type="submit" class="btn btn-primary">1:00PM</button>
+                                </form>
+                            </a></li>
+                        <li class="list-group-item"><a href="#" class="card-link">
+                                <form action="/select_movie" method="post">
+                                    {% csrf_token %}
+                                    <input type="hidden" class="form-control" name="movie_selection_title"
+                                        id="movie_selection_title" value="Angel Has Fallen">
+                                    <input type="hidden" class="form-control" name="movie_selection_time"
+                                        id="movie_selection_time" value="3:50PM">
+                                    <input type="text" class="form-control" name="movie_selection_tix"
+                                        id="movie_selection_tix" placeholder="# of tickets">
+                                    <button type="submit" class="btn btn-primary">3:50PM</button>
+                                </form>
+                            </a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card" style="width: 12rem;">
+                    <img src="https://images.fandango.com/ImageRenderer/200/0/redesign/static/img/default_poster.png/0/images/MasterRepository/fandango/215749/overcomer-posterart.jpg"
+                        class="card-img-top" alt="Overcomer movie poster">
+                    <div class="card-body">
+                        <h5 class="card-title">Overcomer</h5>
+                        <p class="card-text">PG, 1 hr 55 min
+                            Drama</p>
+                    </div>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item"><a href="#" class="card-link">
+                                <form action="/select_movie" method="post">
+                                    {% csrf_token %}
+                                    <input type="hidden" class="form-control" name="movie_selection_title"
+                                        id="movie_selection_title" value="Overcomer">
+                                    <input type="hidden" class="form-control" name="movie_selection_time"
+                                        id="movie_selection_time" value="10:15AM">
+                                    <input type="text" class="form-control" name="movie_selection_tix"
+                                        id="movie_selection_tix" placeholder="# of tickets">
+                                    <button type="submit" class="btn btn-primary">10:15AM</button>
+                                </form>
+                            </a></li>
+                        <li class="list-group-item"><a href="#" class="card-link">
+                                <form action="/select_movie" method="post">
+                                    {% csrf_token %}
+                                    <input type="hidden" class="form-control" name="movie_selection_title"
+                                        id="movie_selection_title" value="Overcomer">
+                                    <input type="hidden" class="form-control" name="movie_selection_time"
+                                        id="movie_selection_time" value="12:15PM">
+                                    <input type="text" class="form-control" name="movie_selection_tix"
+                                        id="movie_selection_tix" placeholder="# of tickets">
+                                    <button type="submit" class="btn btn-primary">12:15PM</button>
+                                </form>
+                            </a></li>
+                        <li class="list-group-item"><a href="#" class="card-link">
+                                <form action="/select_movie" method="post">
+                                    {% csrf_token %}
+                                    <input type="hidden" class="form-control" name="movie_selection_title"
+                                        id="movie_selection_title" value="Overcomer">
+                                    <input type="hidden" class="form-control" name="movie_selection_time"
+                                        id="movie_selection_time" value="3:50PM">
+                                    <input type="text" class="form-control" name="movie_selection_tix"
+                                        id="movie_selection_tix" placeholder="# of tickets">
+                                    <button type="submit" class="btn btn-primary">3:50PM</button>
+                                </form>
+                            </a></li>
+                        <li class="list-group-item"><a href="#" class="card-link">
+                                <form action="/select_movie" method="post">
+                                    {% csrf_token %}
+                                    <input type="hidden" class="form-control" name="movie_selection_title"
+                                        id="movie_selection_title" value="Overcomer">
+                                    <input type="hidden" class="form-control" name="movie_selection_time"
+                                        id="movie_selection_time" value="6:50PM">
+                                    <input type="text" class="form-control" name="movie_selection_tix"
+                                        id="movie_selection_tix" placeholder="# of tickets">
+                                    <button type="submit" class="btn btn-primary">6:50PM</button>
+                                </form>
+                            </a></li>
+                        <li class="list-group-item"><a href="#" class="card-link">
+                                <form action="/select_movie" method="post">
+                                    {% csrf_token %}
+                                    <input type="hidden" class="form-control" name="movie_selection_title"
+                                        id="movie_selection_title" value="Overcomer">
+                                    <input type="hidden" class="form-control" name="movie_selection_time"
+                                        id="movie_selection_time" value="9:50PM">
+                                    <input type="text" class="form-control" name="movie_selection_tix"
+                                        id="movie_selection_tix" placeholder="# of tickets">
+                                    <button type="submit" class="btn btn-primary">9:50PM</button>
+                                </form>
+                            </a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <a href="/dashboard">Admin Dashboard</a>
+    </div>
+</body>
+
+</html>
