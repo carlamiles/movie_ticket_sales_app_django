@@ -1,7 +1,8 @@
 from django.shortcuts import render, redirect, HttpResponseRedirect
 from django.contrib import messages
 from time import localtime, strftime
-from django.core.mail import send_mail
+# from django.core.mail import send_mail
+# from django.conf import settings
 from .models import Order
 
 # Create your views here.
