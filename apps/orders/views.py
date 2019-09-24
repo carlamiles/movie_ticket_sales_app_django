@@ -81,4 +81,6 @@ def checkout(request):
         # fail_silently=False,
         # )
         request.session.clear()
-        return redirect('/')
+        messages.info(request, 'Thank you for your order! You will receive an email confirmation soon. Enjoy the show!')
+        return HttpResponseRedirect('/')
+        
